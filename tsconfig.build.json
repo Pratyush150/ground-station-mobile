@@ -1,0 +1,19 @@
+{
+  // Compiles the framework-free core to plain JavaScript so the command-line
+  // demo can run it under Node with nothing but TypeScript installed. The app
+  // itself never uses this output: Metro compiles the TypeScript directly.
+  "compilerOptions": {
+    "target": "ES2020",
+    "lib": ["ES2020"],
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "types": [],
+    "strict": true,
+    "skipLibCheck": true,
+    "rootDir": "src/core",
+    "outDir": "dist",
+    "noEmit": false,
+    "sourceMap": false
+  },
+  "include": ["src/core/**/*.ts"]
+}

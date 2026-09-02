@@ -1,0 +1,32 @@
+{
+  "expo": {
+    "name": "Ground Station",
+    "slug": "ground-station-mobile",
+    "version": "0.1.0",
+    "orientation": "default",
+    "userInterfaceStyle": "dark",
+    "backgroundColor": "#0B0F14",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "dev.pratyush.groundstation",
+      "infoPlist": {
+        "NSLocalNetworkUsageDescription": "Receives MAVLink telemetry from a vehicle on the local network."
+      }
+    },
+    "android": {
+      "package": "dev.pratyush.groundstation",
+      "permissions": [
+        "INTERNET",
+        "ACCESS_NETWORK_STATE",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION"
+      ]
+    },
+    "plugins": [
+      "expo-keep-awake"
+    ],
+    "extra": {
+      "defaultUdpPort": 14550
+    }
+  }
+}

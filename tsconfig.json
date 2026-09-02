@@ -1,0 +1,39 @@
+{
+  // Deliberately self-contained rather than `"extends": "expo/tsconfig.base"`.
+  //
+  // Extending the Expo base config makes every TypeScript-aware tool - editors,
+  // the test runner's transform, a bare `tsc` - fail until `npm install` has
+  // pulled the whole React Native toolchain. The options below are the ones
+  // that base config sets, written out, so the repo is readable and testable
+  // on a clean checkout. `tsconfig.check.json` narrows this to the core layer.
+  "compilerOptions": {
+    "target": "ESNext",
+    "lib": ["DOM", "ESNext"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    "allowJs": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+
+    "strict": true,
+    "noImplicitOverride": true,
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true,
+
+    "baseUrl": ".",
+    "paths": {
+      "@core/*": ["src/core/*"],
+      "@components/*": ["src/components/*"],
+      "@screens/*": ["src/screens/*"],
+      "@hooks/*": ["src/hooks/*"],
+      "@platform/*": ["src/platform/*"],
+      "@theme/*": ["src/theme/*"]
+    }
+  },
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules", "dist", ".expo", "coverage"]
+}
