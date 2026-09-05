@@ -9,6 +9,19 @@
 A phone-sized ground-control station: it decodes MAVLink telemetry from a drone
 and shows a flight display, the mission, and alerts that do not chatter.
 
+## Screenshots
+
+These two are **component renders, not device screenshots**. `src/components/PrimaryFlightDisplay.tsx`
+is rendered unmodified at the size `FlightScreen` gives it on a 390 pt phone, driven by attitude,
+heading, altitude and speed taken from the bundled demo link through the app's own MAVLink decoder
+and vehicle-state store. No simulator or handset was involved.
+
+![Primary flight display in a right bank, showing pitch ladder, heading tape and speed and altitude tapes](docs/screenshots/pfd-live.png)
+The flight display at T+55 s of the demo flight: 20 degrees of right bank in AUTO.MISSION, 7.2 m/s, 40 m above home.
+
+![The same flight display with the horizon greyed and hatched and an ATT STALE flag](docs/screenshots/pfd-attitude-stale.png)
+The same component six seconds into an injected link dropout. The horizon greys out, a hatch is drawn over it, an ATT STALE flag appears and both readouts fall back to dashes. A frozen horizon that still looks live is the one thing a flight display must never do.
+
 ## The problem
 
 You are standing in a field with a transmitter in one hand. The laptop running
